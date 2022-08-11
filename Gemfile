@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.7.5"
+ruby "3.1.2"
 gem "bcrypt", "3.1.13"
 gem "bootstrap-sass"
 gem "carrierwave"
@@ -14,7 +14,7 @@ gem "jquery-rails"
 gem "mime-types", require: "mime/types/full"
 gem "pg"
 gem "puma", "~> 5.0"
-gem "rails", "6.0.1"
+gem "rails", '>= 6.0.4'
 gem "rails-i18n"
 gem "rubocop"
 gem "sass-rails"
@@ -26,6 +26,8 @@ gem "webpacker", "~> 5.0"
 gem "will_paginate"
 gem "will_paginate-bootstrap4"
 gem "thin"
+gem 'tzinfo-data'
+
 
 
 
