@@ -1,0 +1,38 @@
+- provide(:title, @user.name)
+.details_profile
+  .headerr
+    .profile
+      h1.header__avata-img= gravatar_for @user
+      h1.header__left-name= @user.name
+      .header__left-icon
+        a href="" target="_blank"
+          i.fa.fa-facebook aria-hidden="true"
+        a href="" target="_blank"
+          i.fa.fa-gitlab aria-hidden="true"
+        a href="" target="_blank"
+          i.fa.fa-twitter aria-hidden="true"
+        a href=""
+          i.fa.fa-github aria-hidden="true"
+    .personal_information
+      .information_left
+        h3
+          | NAME
+        p= @user.name
+        h3
+          = link_to 'Xem thành tích cá nhân', achiviements_path(user_id: @user.id)
+        h3
+          = link_to 'Update Information', edit_user_path(id: @user.id) 
+      .information_left
+        h3
+          | EMAIL
+        p= @user.email
+        h3
+          | ĐỊA CHỈ
+        p= @user.address
+      .information_right
+        h3
+          | SỐ LẦN TEST
+        p #{@user.user_exams.includes(:exam).count}
+        h3
+          | SỐ LẦN ĐẬU
+        p #{@user.user_exams.includes(:exam).where(is_passed: true).count}
